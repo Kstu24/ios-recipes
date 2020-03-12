@@ -16,9 +16,7 @@ class RecipeDetailViewController: UIViewController {
             updateViews()
         }
     }
-    
     //MARK: - Outlets
-    
     @IBOutlet var recipeNameLabel: UILabel!
     @IBOutlet var recipeTextView: UITextView!
     
@@ -26,14 +24,10 @@ class RecipeDetailViewController: UIViewController {
         super.viewDidLoad()
         updateViews()
     }
-    
     //MARK: - Functions
-    
     func updateViews() {
-        
-        guard self.isViewLoaded else { return }
-        guard let recipe = recipe else { return }
-        
+        guard self.isViewLoaded,
+        let recipe = recipe else { return }
         recipeNameLabel.text = recipe.name
         recipeTextView.text = recipe.instructions
         
